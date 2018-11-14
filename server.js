@@ -4,8 +4,6 @@ const path = require("path");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
-const graphqlHTTP = require("express-graphql");
-const schema = require("./schema/schema");
 const mongoose = require("mongoose");
 
 const PORT = process.env.PORT || 4000;
@@ -31,11 +29,8 @@ mongoose.connection.once("open", () => {
 	console.log("conneted to database");
 });
 
-// bind express with graphql
-app.use("/graphql", graphqlHTTP({
-	schema,
-	graphiql: true
-}));
+
+
 
 app.get("*", function(req, res) {
 	res.sendFile(path.join(__dirname, "./client/build/index.html"));

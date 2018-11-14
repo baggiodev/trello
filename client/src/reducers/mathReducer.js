@@ -1,7 +1,8 @@
-const mathReducer = (state = {
+const defaultState = {
     result: 1,
     lastValues: []
-}, action) => {
+}
+const mathReducer = (state = defaultState, action) => {
     switch (action.type) {
         case "ADD":
             state = {
@@ -16,7 +17,9 @@ const mathReducer = (state = {
                 result: state.result - action.payload,
                 lastValues: [...state.lastValues, action.payload]
             };
-            break;
+			break;
+		default:
+			break;
     }
     return state;
 };
