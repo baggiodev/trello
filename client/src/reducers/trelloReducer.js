@@ -86,12 +86,3 @@ const trelloReducer = (state = defaultState, action) => {
 };
 
 export default trelloReducer;
-// action: "ADD_CARD"
-// action: "VIEW_ARCHIVE"
-// action: "DELETE_CARD"
-// action: "ARCHIVE_CARD"
-// action:  "START_CARD"
-// action: "ADD_BOARD"
-// action: "DELETE_BOARD"
-// action: "INIT"
-// action: "EDIT_CARD"
