@@ -5,11 +5,13 @@ import promise from "redux-promise-middleware";
 
 import math from "./reducers/mathReducer";
 import user from "./reducers/userReducer";
+import trello from "./reducers/trelloReducer"
 
 export default createStore(
     combineReducers({
 		math,
-		user
+		user,
+		trello
     }),
     {},
     applyMiddleware(logger, thunk, promise())

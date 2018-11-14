@@ -1,16 +1,13 @@
 import React from "react";
 import {connect} from "react-redux";
 
-import { User } from "../components/User";
-import { Main } from "../components/Main";
-import { setName } from "../actions/userActions";
+import {init, addCard, deleteCard, editCard, addBoard, deleteBoard} from "../actions/trelloActions"
 
 class App extends React.Component {
     render() {
         return (
             <div className="container">
-                <Main changeUsername={() => this.props.setName("Anna")}/>
-                <User username={this.props.user.name}/>
+                
             </div>
         );
     }
@@ -19,15 +16,31 @@ class App extends React.Component {
 const mapStateToProps = (state) => {
   return {
       user: state.user,
-      math: state.math
+	  math: state.math,
+	  trello: state.trello
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        setName: (name) => {
-            dispatch(setName(name));
-        }
+        init: (payload) => {
+            dispatch(init(payload));
+		},
+		addCard: (card) => {
+			dispatch(addCard(card))
+		},
+		deleteCard: (cardId) => {
+			dispatch(deleteCard(cardId))
+		},
+		addBoard: (board) => {
+			dispatch(addBoard(board))
+		},
+		deleteBoard: (boardId) =>{
+			dispatch(deleteBoard(boardId))
+		},
+		editCard:(card) =>{
+			dispatch(editCard(card))
+		}
     };
 };
 
