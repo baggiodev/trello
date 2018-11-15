@@ -24,7 +24,7 @@ if(process.env.NODE_ENV === "production"){
 	app.use(express.static("client/build"));
 }
 
-mongoose.connect("mongodb://localhost/test");
+mongoose.connect("mongodb://localhost/test",{ useNewUrlParser: true });
 mongoose.connection.once("open", () => {
 	console.log("conneted to database");
 });

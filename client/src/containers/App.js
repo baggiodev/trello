@@ -6,9 +6,9 @@ import {init, addCard, deleteCard, editCard, addBoard, deleteBoard} from "../act
 class App extends React.Component {
 
 	addCardFunc = () => {
-		console.log(this.props.trello.cardList.length)
+		console.log(this.props.trello.cardList[this.props.trello.cardList.length-1].id+1)
 		const testCard = {
-			id: this.props.trello.cardList.length,
+			id: this.props.trello.cardList[this.props.trello.cardList.length-1].id+1,
 			name:"testing",
 			doing: null,
 			boardId: 4,
