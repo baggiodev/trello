@@ -5,6 +5,8 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const mongoose = require("mongoose");
+const graphqlHTTP = require("express-graphql");
+const schema = require("./schema/schema");
 
 const PORT = process.env.PORT || 4000;
 
@@ -29,7 +31,10 @@ mongoose.connection.once("open", () => {
 	console.log("conneted to database");
 });
 
-
+app.use("/graphql", graphqlHTTP({
+	schema,
+	graphiql: true
+}));
 
 
 app.get("*", function(req, res) {
