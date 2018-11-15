@@ -4,10 +4,25 @@ import {connect} from "react-redux";
 import {init, addCard, deleteCard, editCard, addBoard, deleteBoard} from "../actions/trelloActions"
 
 class App extends React.Component {
+
+	addCardFunc = () => {
+		console.log(this.props.trello.cardList.length)
+		const testCard = {
+			id: this.props.trello.cardList.length,
+			name:"testing",
+			doing: null,
+			boardId: 4,
+			started: false
+		}
+		this.props.addCard(testCard)
+	}
+	componentDidMount(){
+		console.log(this.props.trello);
+	}
     render() {
         return (
             <div className="container">
-                
+				<button onClick={this.addCardFunc}></button>
             </div>
         );
     }
@@ -15,8 +30,6 @@ class App extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-      user: state.user,
-	  math: state.math,
 	  trello: state.trello
   };
 };
