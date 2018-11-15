@@ -22,8 +22,9 @@ npm run start
 ```
 
 # Packages used
-- react
-- graphql
-- mongodb
-- redux
-- express
+- [react](https://www.npmjs.com/package/create-react-app)
+- [graphql](https://www.npmjs.com/package/graphql)
+- [mongoose](https://www.npmjs.com/package/mongoose)
+- [redux](https://www.npmjs.com/package/redux)
+- [react-redux](https://www.npmjs.com/package/react-redux)
+- [express](https://www.npmjs.com/package/express)
