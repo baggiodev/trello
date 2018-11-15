@@ -22,3 +22,8 @@ npm run start
 ```
 
 # Packages used
+- react
+- graphql
+- mongodb
+- redux
+- express
