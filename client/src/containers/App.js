@@ -1,14 +1,15 @@
 import React from "react";
 import {connect} from "react-redux";
-
+import Board from "../components/Board"
 import {init, addCard, deleteCard, editCard, addBoard, deleteBoard} from "../actions/trelloActions"
-
+const last = arr => arr[arr.length-1]
 class App extends React.Component {
 
 	addCardFunc = () => {
-		console.log(this.props.trello.cardList[this.props.trello.cardList.length-1].id+1)
+		const {cardList} = this.props.trello;
+		console.log(last(cardList).id+1);
 		const testCard = {
-			id: this.props.trello.cardList[this.props.trello.cardList.length-1].id+1,
+			id: last(cardList).id+1,
 			name:"testing",
 			doing: null,
 			boardId: 4,
@@ -21,8 +22,14 @@ class App extends React.Component {
 	}
     render() {
         return (
-            <div className="container">
-				<button onClick={this.addCardFunc}></button>
+            <div className="container" id="flexParent">
+				{/* <button onClick={this.addCardFunc}></button> */}
+				{this.props.trello.boardList.map(board => (
+					<Board 
+					key={board.id}
+					name={board.name}
+					/>
+				))}
             </div>
         );
     }

@@ -1,0 +1,31 @@
+#flexParent{
+	display: flex;
+	justify-content: space-around;
+}
+.board{
+	flex-grow: 1;
+	min-height: 500px;
+	background-color: #eee;
+	margin: 5px;
+	box-shadow: rgba(0, 0, 0, .30) 0px 0px 5px 1px;
+	border-radius: 15px;
+}
+.board p{
+	text-align: center;
+	color: #666;
+	border: 0;
+	border-bottom: 1px;
+	border-color: rgba(70, 27, 27, 0.50);
+	border-style: solid;
+}
+.boardContent{
+	display: flex;
+	flex-direction: column;
+}
+.card{
+	margin:5px 10px 5px 10px;
+	background:rgb(159, 184, 175);
+	min-height: 100px;
+	text-align: center;
+	border-radius: 10px;
+}
