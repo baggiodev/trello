@@ -29,5 +29,3 @@ npm run start
 - [react-redux](https://www.npmjs.com/package/react-redux)
 - [express](https://www.npmjs.com/package/express)
 
-Nope!
-Test!
